@@ -6,9 +6,9 @@
   "author": "zt9411@gmail.com",
   "license": "ISC",
   "scripts": {
-    "start": "node bin/www",
-    "dev": "nodemon bin/www",
-    "prod": "pm2 start bin/www"
+    "start": "export NODE_ENV='development' && node bin/www",
+    "dev": "export NODE_ENV='development' && nodemon bin/www",
+    "prod": "export NODE_ENV='production' pm2 start bin/www"
   },
   "dependencies": {
     "koa": "^2.7.0",

@@ -4,3 +4,4 @@ node_modules
 
 logs
 public
+.yarn-error.log
