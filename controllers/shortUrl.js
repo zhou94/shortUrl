@@ -2,16 +2,16 @@ const shortUrlService = require('../services/shortUrl')
 const config = require('../config/index')
 exports.generate = async ctx =>{
     try{
-        const { url } = ctx.request.body;
+        const { longUrl } = ctx.request.body;
         console.log(process.env.NODE_ENV)
         const prefix = config.prefix[process.env.NODE_ENV]
         const reg = /(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/
-        if(!url){
+        if(!longUrl){
           ctx.state.error('参数不正确');
         } else {
-          const regResult = reg.test(url)
+          const regResult = reg.test(longUrl)
          if(regResult){
-          const short_url = await shortUrlService.generateUrl(url)
+          const short_url = await shortUrlService.generateUrl(longUrl)
 
           ctx.state.success({
             short_url: prefix + short_url
