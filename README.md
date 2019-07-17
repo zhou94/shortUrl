@@ -12,11 +12,11 @@ git clone https://github.com/zhou94/shortUrl.git
 
 cd shortUrl
 
-yarn //安装依赖
+yarn 安装依赖
 
-yarn dev //服务端运行 nodemon调试
+yarn dev 服务端运行 nodemon调试
 
-yarn prod  //生产环境 pm2进程守护
+yarn prod  生产环境 pm2进程守护
 
 ## 技术栈
 
